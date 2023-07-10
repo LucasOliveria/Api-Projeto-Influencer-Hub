@@ -119,8 +119,37 @@ const updateInfluencer = async (req, res) => {
   }
 }
 
+const deleteInfluencer = async (req, res) => {
+  const { authorized } = req.user;
+  const { idInfluencer } = req.params;
+
+  if (!authorized) {
+    return res.status(401).json("Esse usuário não está autorizado a excluir registros");
+  }
+
+
+  try {
+    const influencer = await knex("influencers").where({ id: idInfluencer }).first();
+
+    if (!influencer) {
+      return res.status(404).json("Influencer não encontrado!")
+    }
+
+    const deleteInfluencer = await knex("influencers").del().where({ id: idInfluencer });
+
+    if (!deleteInfluencer) {
+      return res.status(400).json("Não foi possível excluir o influenciador");
+    }
+
+    res.status(200).json("Influenciador excluído com sucesso");
+  } catch (error) {
+    return res.status(500).json("Erro interno do servidor!");
+  }
+}
+
 module.exports = {
   registerInfluencer,
   getInfluencers,
-  updateInfluencer
+  updateInfluencer,
+  deleteInfluencer
 }

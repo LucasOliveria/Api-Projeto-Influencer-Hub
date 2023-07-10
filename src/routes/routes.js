@@ -9,7 +9,7 @@ const validateToken = require('../middlewares/validateToken.js');
 
 const { registerUser, login, getProfile } = require('../controllers/users');
 const { getCategories } = require('../controllers/categories.js');
-const { registerInfluencer, getInfluencers, updateInfluencer } = require('../controllers/influencers.js');
+const { registerInfluencer, getInfluencers, updateInfluencer, deleteInfluencer } = require('../controllers/influencers.js');
 
 
 
@@ -34,5 +34,6 @@ routes.put("/influencers/:idInfluencer",
   validateSchemes(influencerScheme),
   updateInfluencer
 );
+routes.delete("/influencers/:idInfluencer", deleteInfluencer);
 
 module.exports = routes;
