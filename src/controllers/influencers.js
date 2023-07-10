@@ -127,7 +127,6 @@ const deleteInfluencer = async (req, res) => {
     return res.status(401).json("Esse usuário não está autorizado a excluir registros");
   }
 
-
   try {
     const influencer = await knex("influencers").where({ id: idInfluencer }).first();
 
