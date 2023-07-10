@@ -248,7 +248,7 @@ Sem corpo de requisição, apenas o token no headers.
 
 7. PUT /influencers/:id 
 
-Essa rota é para atualizar um influenciador. O ```id``` do influenciador que se quer atualizar deve ser passado como paramentro de rota ```req.params```.
+Essa rota é para atualizar um influenciador. O ```id``` do influenciador que se quer atualizar deve ser passado como parâmetro de rota ```req.params```.
 
 ### Exemplos de requisição
 
@@ -308,7 +308,7 @@ Essa rota é para atualizar um influenciador. O ```id``` do influenciador que se
 
 8. DELETE /influencers/:id
 
-Essa rota é para excluir um influenciador. O ```id``` do influenciador que se quer excluir deve ser passado como paramentro de rota ```req.params```.
+Essa rota é para excluir um influenciador. O ```id``` do influenciador que se quer excluir deve ser passado como parâmetro de rota ```req.params```.
 
 ### Exemplo de requisição
 
