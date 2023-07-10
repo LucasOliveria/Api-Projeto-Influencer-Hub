@@ -40,7 +40,6 @@ const registerInfluencer = async (req, res) => {
 
     res.status(200).json(newInfluencer);
   } catch (error) {
-    console.log(error);
     return res.status(500).json("Erro interno do servidor!");
   }
 
@@ -114,7 +113,6 @@ const updateInfluencer = async (req, res) => {
 
     res.status(200).json(newInfluencer);
   } catch (error) {
-    console.log(error);
     return res.status(500).json("Erro interno do servidor!");
   }
 }
