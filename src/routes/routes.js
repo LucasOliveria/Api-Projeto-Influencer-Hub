@@ -14,7 +14,6 @@ routes.post("/login", validateSchemes(loginScheme), login);
 routes.use(validateToken);
 
 routes.get("/profile", getProfile);
-
 routes.get("/categories", getCategories);
 
 module.exports = routes;
