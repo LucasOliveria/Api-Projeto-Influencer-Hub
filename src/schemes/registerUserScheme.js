@@ -1,6 +1,6 @@
 const joi = require("joi");
 
-const registerScheme = joi.object({
+const registerUserScheme = joi.object({
   name: joi.string().required().trim().messages({
     "any.required": "O campo nome é obrigatório",
     "string.empty": "O campo nome não pode ser vázio"
@@ -20,4 +20,4 @@ const registerScheme = joi.object({
   })
 });
 
-module.exports = registerScheme;
+module.exports = registerUserScheme;
