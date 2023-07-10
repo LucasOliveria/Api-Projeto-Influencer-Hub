@@ -1,12 +1,13 @@
 const joi = require("joi");
 
-const registerInfluencerScheme = joi.object({
+const influencerScheme = joi.object({
   name: joi.string().required().trim().messages({
     "any.required": "O campo nome é obrigatório",
     "string.empty": "O campo nome não pode ser vázio"
   }),
   email: joi.string().email().messages({
-    "string.email": "O campo e-mail não está em um formato válido"
+    "string.email": "O campo e-mail não está em um formato válido",
+    "string.empty": "O campo e-mail não pode ser vázio"
   }),
   age: joi.number().positive().integer().messages({
     "number.positive": "O campo idade deve ser um número positivo",
@@ -27,10 +28,11 @@ const registerInfluencerScheme = joi.object({
     "string.empty": "O campo plataforma não pode ser vázio"
   }),
   id_category: joi.number().required().positive().integer().messages({
+    "any.required": "O campo categoria é obrigatório",
     "number.positive": "O campo categoria deve ser um número positivo",
     "number.integer": "O campo categoria precisa ser um número inteiro",
     "number.base": "O campo categoria precisa ser um número"
   })
 });
 
-module.exports = registerInfluencerScheme;
+module.exports = influencerScheme;
