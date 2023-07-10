@@ -320,6 +320,11 @@ Sem corpo de requisição, apenas o token no headers.
 {
     "Usuário não autorizado!"
 }
+
+```json
+{
+    "Influencer não encontrado!"
+}
 ```
 ```json
 {
