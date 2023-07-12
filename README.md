@@ -72,7 +72,7 @@ Essa rota é para login de usuários cadastrados.
 
 ```json
 {
-    "Usuário ou senha incorreta!"
+    "E-mail ou senha incorreta!"
 }
 ```
 ```json

@@ -34,13 +34,13 @@ const login = async (req, res) => {
     const user = await knex("users").where({ email }).first()
 
     if (!user) {
-      return res.status(400).json("Usuário ou senha incorreta!");
+      return res.status(400).json("E-mail ou senha incorreta!");
     }
 
     const correctPassword = await bcrypt.compare(password, user.password);
 
     if (!correctPassword) {
-      return res.status(400).json("Usuário ou senha incorreta!");
+      return res.status(400).json("E-mail ou senha incorreta!");
     }
 
     const token = jwt.sign({ id: user.id }, process.env.PASS_JWT, { expiresIn: "8h" });
