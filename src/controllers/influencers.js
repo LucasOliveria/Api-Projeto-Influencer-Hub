@@ -48,18 +48,39 @@ const registerInfluencer = async (req, res) => {
 const getInfluencers = async (req, res) => {
   try {
     const influencers = await knex("influencers").orderBy("id", "asc");
-    let categoriesList = [];
+    let influencersList = [];
 
     for (const influencer of influencers) {
       const categoryName = await knex("categories").where({ id: influencer.id_category }).first();
 
       influencer.category = categoryName.category;
 
-      categoriesList.push(influencer);
+      influencersList.push(influencer);
     }
 
-    res.status(200).json(categoriesList);
+    res.status(200).json(influencersList);
   } catch (error) {
+    return res.status(500).json("Erro interno do servidor!");
+  }
+}
+
+const getAInfluencer = async (req, res) => {
+  const { idInfluencer } = req.params;
+
+  try {
+    const influencer = await knex("influencers").where({ id: idInfluencer }).first();
+
+    if (!influencer) {
+      return res.status(404).json("Influencer não encontrado!")
+    }
+
+    const categoryName = await knex("categories").where({ id: influencer.id_category }).first();
+
+    influencer.category = categoryName.category;
+
+    res.status(200).json(influencer);
+  } catch (error) {
+    console.log(error);
     return res.status(500).json("Erro interno do servidor!");
   }
 }
@@ -147,6 +168,7 @@ const deleteInfluencer = async (req, res) => {
 module.exports = {
   registerInfluencer,
   getInfluencers,
+  getAInfluencer,
   updateInfluencer,
   deleteInfluencer
 }

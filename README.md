@@ -17,7 +17,7 @@ A API pode ser acessada por meio da URL acima e já possui conexão com um banco
 1. Faça um fork desse repositório para a sua coleção de repositórios no GitHub
 2. Clone o repositório para sua máquina
 3. Abra o projeto no seu editor de códigos (IDE) e no terminal digite o comando "npm install" para instalar as dependências
-4. Nos arquivos index.js, users.js, connection.js e validateToken.js substitua as variável de ambiente "process.env" pelas configurações de conexão que costuma utilizar. OBS.: A conexão com o banco de dados está sendo feita pela biblioteca ```knex```
+4. Nos arquivos index.js, users.js, connection.js e validateToken.js substitua as variável de ambiente "process.env" pelas configurações de conexão que costuma utilizar. OBS.: A conexão com o banco de dados está sendo feita pela biblioteca ```knex```. Em uma conexão local retire a propriedade ```ssl: { rejectUnauthorized: false }``` do arquivo connection.js
 5. Utilize o arquivo dump.sql para criar o banco de dados e as tabelas necessárias
 
 ---
@@ -244,9 +244,42 @@ Sem corpo de requisição, apenas o token no headers.
         "id_category": 10,
         "category": "Entretenimento"
 	},
+]
 ```
 
-7. PUT /influencers/:id 
+7. GET /influencers/:id
+
+Essa Rota é para encontrar um influenciador pelo número do id. O ```id``` do influenciador que se quer encontrar deve ser passado como parâmetro de rota ```req.params```.
+
+### Exemplo de requisição
+
+Sem corpo de requisição, apenas o token no headers.
+
+### Exemplo de resposta
+
+```json
+{
+    "Usuário não autorizado!"
+}
+```
+```json
+[
+    {
+        "id": 1,
+        "name": "Pato Papão",
+        "email": "pato@email.com",
+        "age": 31,
+        "subscribers": 1200000,
+        "at_channel": "paptopapao_oficial",
+        "platform": "YouTube",
+        "id_user": 1,
+        "id_category": 13,
+        "category": "Games"
+    }
+]
+```
+
+8. PUT /influencers/:id 
 
 Essa rota é para atualizar um influenciador. O ```id``` do influenciador que se quer atualizar deve ser passado como parâmetro de rota ```req.params```.
 
@@ -306,7 +339,7 @@ Essa rota é para atualizar um influenciador. O ```id``` do influenciador que se
 }
 ```
 
-8. DELETE /influencers/:id
+9. DELETE /influencers/:id
 
 Essa rota é para excluir um influenciador. O ```id``` do influenciador que se quer excluir deve ser passado como parâmetro de rota ```req.params```.
 

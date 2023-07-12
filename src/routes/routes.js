@@ -9,9 +9,7 @@ const validateToken = require('../middlewares/validateToken.js');
 
 const { registerUser, login, getProfile } = require('../controllers/users');
 const { getCategories } = require('../controllers/categories.js');
-const { registerInfluencer, getInfluencers, updateInfluencer, deleteInfluencer } = require('../controllers/influencers.js');
-
-
+const { registerInfluencer, getInfluencers, updateInfluencer, deleteInfluencer, getAInfluencer } = require('../controllers/influencers.js');
 
 const routes = express();
 
@@ -25,11 +23,13 @@ routes.use(validateToken);
 
 routes.get("/profile", getProfile);
 routes.get("/categories", getCategories);
+
 routes.post("/influencers",
   validateSchemes(influencerScheme),
   registerInfluencer
 );
 routes.get("/influencers", getInfluencers);
+routes.get("/influencers/:idInfluencer", getAInfluencer);
 routes.put("/influencers/:idInfluencer",
   validateSchemes(influencerScheme),
   updateInfluencer
