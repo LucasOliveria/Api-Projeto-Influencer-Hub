@@ -263,20 +263,20 @@ Sem corpo de requisição, apenas o token no headers.
 }
 ```
 ```json
-[
-    {
-        "id": 1,
-        "name": "Pato Papão",
-        "email": "pato@email.com",
-        "age": 31,
-        "subscribers": 1200000,
-        "at_channel": "paptopapao_oficial",
-        "platform": "YouTube",
-        "id_user": 1,
-        "id_category": 13,
-        "category": "Games"
-    }
-]
+
+{
+    "id": 1,
+    "name": "Pato Papão",
+    "email": "pato@email.com",
+    "age": 31,
+    "subscribers": 1200000,
+    "at_channel": "paptopapao_oficial",
+    "platform": "YouTube",
+    "id_user": 1,
+    "id_category": 13,
+    "category": "Games"
+}
+
 ```
 
 8. PUT /influencers/:id 
