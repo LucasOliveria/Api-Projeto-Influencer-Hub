@@ -9,6 +9,8 @@ A API também permite a criação e login de usuários autenticados para acessar
 ## URL da API:
 ```
 https://api-projeto-influencer-hub.cyclic.app
+
+URL alternativa: https://api-projeto-influencer-hub-alternative.onrender.com/
 ```
 ## Como utilizar os códigos desse repositório:
 
