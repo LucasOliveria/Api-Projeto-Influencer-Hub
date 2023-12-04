@@ -32,8 +32,8 @@ A API pode ser acessada por meio da URL acima e já possui conexão com um banco
 PORT=3000
 
 HOST=localhost
-USER=seuUsuario
-PASS=suaSenha
+USER=seuUsuarioPostgreSQL
+PASS=suaSenhaPostgreSQL
 DATABASE=nomeDoBancoDeDados
 
 PASS_JWT=umaSenhaSegura
