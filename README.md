@@ -14,13 +14,17 @@ URL alternativa: https://api-projeto-influencer-hub-alternative.onrender.com
 ```
 ## Como utilizar os códigos desse repositório:
 
+Antes de começar instale o Node.js e o postgreSQL na sua máquina caso ainda não possua.
+Node.js: <a href="https://nodejs.org/en" target="_blank">"https://nodejs.org/en</a> 
+postgreSQL: <a href="https://www.postgresql.org/download/" target="_blank">https://www.postgresql.org/download/</a> 
+
 A API pode ser acessada por meio da URL acima e já possui conexão com um banco de dados externo. Mas caso queira utilizar os códigos desse repositório, execute os passos a seguir:
 
 1. Faça um fork desse repositório para a sua coleção de repositórios no GitHub
 2. Clone o repositório para sua máquina
-3. Abra o projeto no seu editor de códigos (IDE) e no terminal digite o comando "npm install" para instalar as dependências
-4. Nos arquivos index.js, users.js, connection.js e validateToken.js substitua as variável de ambiente "process.env" pelas configurações de conexão que costuma utilizar. OBS.: A conexão com o banco de dados está sendo feita pela biblioteca ```knex```. Em uma conexão local retire a propriedade ```ssl: { rejectUnauthorized: false }``` do arquivo connection.js
-5. Utilize o arquivo dump.sql para criar o banco de dados e as tabelas necessárias
+3. Abra o projeto no seu editor de códigos (IDE) e no terminal digite o comando "npm install" para instalar as dependências. OBS.:É necessário possuir o Node.js instalado em sua maquina
+4. Nos arquivos index.js, users.js, connection.js e validateToken.js existem variáveis de ambiente "process.env" e essas devem ser configuradas. Para isso duplique o arquivo .env.example no diretório raiz e preencha tais variáveis com as configurações de conexão que costuma utilizar. OBS.: A conexão com o banco de dados está sendo feita pela biblioteca ```knex```. Em uma conexão local retire a propriedade ```ssl: { rejectUnauthorized: false }``` do arquivo connection.js
+5. Utilize o arquivo dump.sql para criar o banco de dados e as tabelas necessárias com o auxilio da ferramenta que você utiliza para criar e manipular banco de dados (Ex.: Oracle SQL Developer,MySQL Workbench, Beekeeper Studio...). OBS.: Esse projeto utiliza o postgreSQL para gerenciamento de banco de dados por isso você também deve ter instalado em sua máquina
 
 ---
 
@@ -366,3 +370,11 @@ Sem corpo de requisição, apenas o token no headers.
     "Influenciador excluído com sucesso"
 }
 ```
+
+## Autor:
+#### Lucas Oliveira
+
+## Links
+<a href="https://www.linkedin.com/in/lucas-oliveira-5b8a5532/" target="_blank">LinkedIn</a>
+
+<a href="https://github.com/LucasOliveria/Projeto-Influencer-Hub" target="_blank">Repositório Front-end</a>
