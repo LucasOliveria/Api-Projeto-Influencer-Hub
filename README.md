@@ -60,8 +60,10 @@ module.exports = knex
 
 ## Endpoints
 
-Utilize a URL da API com os endpoints a seguir para acessar as Rotas
-
+Utilize a URL da API com os endpoints a seguir para acessar as Rotas. Caso esteja rodando o projeto localmente utilizando os códigos desse repositório, utilize a URL local de acordo com as configurações de HOST e PORT que colocou nas variáveis de ambiente. Ex.:
+```
+http://localhost:3000
+```
 
 1. POST /user
 
