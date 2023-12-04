@@ -26,7 +26,36 @@ A API pode ser acessada por meio da URL acima e já possui conexão com um banco
 2. Clone o repositório para sua máquina
 3. Abra o projeto no seu editor de códigos (IDE) e no terminal digite o comando "npm install" para instalar as dependências. OBS.:É necessário possuir o Node.js instalado em sua maquina
 4. Nos arquivos index.js, users.js, connection.js e validateToken.js existem variáveis de ambiente "process.env" e essas devem ser configuradas. Para isso duplique o arquivo .env.example no diretório raiz e preencha tais variáveis com as configurações de conexão que costuma utilizar. OBS.: A conexão com o banco de dados está sendo feita pela biblioteca ```knex```. Em uma conexão local retire a propriedade ```ssl: { rejectUnauthorized: false }``` do arquivo connection.js
-5. Utilize o arquivo dump.sql para criar o banco de dados e as tabelas necessárias com o auxilio da ferramenta que você utiliza para criar e manipular banco de dados (Ex.: Oracle SQL Developer,MySQL Workbench, Beekeeper Studio...). OBS.: Esse projeto utiliza o postgreSQL para gerenciamento de banco de dados por isso você também deve ter instalado em sua máquina
+
+#### .env (exemplo)
+```javascript
+PORT=3000
+
+HOST=localhost
+USER=seuUsuario
+PASS=suaSenha
+DATABASE=nomeDoBancoDeDados
+
+PASS_JWT=umaSenhaSegura
+```
+
+#### database > connection.js
+```javascript
+const knex = require("knex")({
+  client: 'pg',
+  connection: {
+    host: process.env.HOST,
+    user: process.env.USER,
+    password: process.env.PASS,
+    database: process.env.DATABASE,
+    ssl: { rejectUnauthorized: false }
+  }
+});
+
+module.exports = knex
+```
+5. Utilize o arquivo dump.sql para criar o banco de dados e as tabelas necessárias com o auxilio da ferramenta que você utiliza para criar e manipular banco de dados (Ex.: Oracle SQL Developer,MySQL Workbench, Beekeeper Studio...). OBS.: Esse projeto utiliza o postgreSQL para gerenciamento de banco de dados por isso você também deve ter instalado em sua máquina.
+6. Após realizar todas as configurações rode o script "npm run dev" no terminal do projeto
 
 ---
 
