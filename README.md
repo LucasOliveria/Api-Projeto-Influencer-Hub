@@ -15,7 +15,9 @@ URL alternativa: https://api-projeto-influencer-hub-alternative.onrender.com
 ## Como utilizar os códigos desse repositório:
 
 Antes de começar instale o Node.js e o postgreSQL na sua máquina caso ainda não possua.
+
 Node.js: <a href="https://nodejs.org/en" target="_blank">"https://nodejs.org/en</a> 
+
 postgreSQL: <a href="https://www.postgresql.org/download/" target="_blank">https://www.postgresql.org/download/</a> 
 
 A API pode ser acessada por meio da URL acima e já possui conexão com um banco de dados externo. Mas caso queira utilizar os códigos desse repositório, execute os passos a seguir:
